@@ -1,8 +1,8 @@
 const rotators = Array.from(document.getElementsByClassName('rotator'));
 
-function next() {
-let rotCase = Array.from(document.getElementsByClassName('rotator__case'));
-let active = document.querySelector('.rotator__case_active');
+const next = (rotator) => {
+let rotCase = Array.from(rotator.getElementsByClassName('rotator__case'));
+let active = rotator.querySelector('.rotator__case_active');
 let i = rotCase.indexOf(active);
 let interval = rotCase[i].dataset.speed;
     
@@ -19,8 +19,8 @@ let interval = rotCase[i].dataset.speed;
     setTimeout(rotate, interval); 
   }
 
-  rotators.forEach(elem => {
-    next(elem)
+  rotators.forEach(rotator => {
+    next(rotator);
   });
 
   
