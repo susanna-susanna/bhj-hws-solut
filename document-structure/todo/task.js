@@ -27,7 +27,7 @@ button.addEventListener('click', event => {
 });
 
 input.addEventListener('keypress', (event) => {
-  if (event.key.toLowerCase() === 'enter') {
+  if (event.keyCode === 13) {
     event.preventDefault();
     addTask();
   }
