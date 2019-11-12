@@ -6,8 +6,8 @@ form.addEventListener('submit', function(event) {
   if (file) {
     let xhr = new XMLHttpRequest();
     xhr.open("POST", "https://netology-slow-rest.herokuapp.com/upload.php", true);
-    xhr.upload.onprogress = function(e) {
-      progress.value = e.loaded / e.total;
+    xhr.onprogress = function(e) {
+      progress.value = e.loaded / 10000000;
     };
     xhr.send(file);
   }
