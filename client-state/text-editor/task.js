@@ -1,7 +1,7 @@
 const editor = document.querySelector('#editor');
 console.log(editor);
 
-editor.addEventListener('change', function() {
+editor.addEventListener('input', function() {
   console.log(editor.value);
   //localStorage.setItem('value', 'editor.value');
   localStorage['value'] = editor.value;

@@ -6,8 +6,19 @@ const userId = document.getElementById('user_id');
 //let xhr = new XMLHttpRequest();
 
 window.addEventListener('load', () => {
-  signin.classList.add('signin_active');
-})
+  //signin.classList.add('signin_active');
+  try {
+    let greeting = localStorage.getItem('auth');
+    console.log(greeting)
+
+    welcome.classList.add('welcome_active');
+    userId.innerText = greeting;
+
+  } catch(e) {
+      signin.classList.add('signin_active');
+      return null;
+  }
+});
 
 function logIn() {
   let xhr = new XMLHttpRequest();
